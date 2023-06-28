@@ -9,7 +9,7 @@ export default function RegisterPage() {
   async function registerUser(ev) {
     ev.preventDefault();
     try {
-      await axios.post('/register', {
+      await axios.post('http://localhost:4000/register', {
         name,
         email,
         password,
@@ -25,11 +25,11 @@ export default function RegisterPage() {
         <h1 className="text-4xl text-center mb-4">Register</h1>
         <form className="max-w-md mx-auto" onSubmit={registerUser}>
           <input type="text"
-                 placeholder="John Doe"
+                 placeholder="Username"
                  value={name}
                  onChange={ev => setName(ev.target.value)} />
           <input type="email"
-                 placeholder="your@email.com"
+                 placeholder="user@email.com"
                  value={email}
                  onChange={ev => setEmail(ev.target.value)} />
           <input type="password"
